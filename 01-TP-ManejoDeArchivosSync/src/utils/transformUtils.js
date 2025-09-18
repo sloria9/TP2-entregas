@@ -5,7 +5,7 @@
  * @param {string} separador
  * @returns {number[]} array de numeros
  */
-function transformarStringEnArrayDeNumeros(str, separador) {
+export function transformarStringEnArrayDeNumeros(str, separador) {
 }
 
 /**
@@ -14,7 +14,6 @@ function transformarStringEnArrayDeNumeros(str, separador) {
  * @param {string} separador 
  * @returns {string} el nuevo string
  */
-function transformarArrayDeNumerosAUnSoloString(arr, separador) {
+export function transformarArrayDeNumerosAUnSoloString(arr, separador) {
 }
 
-// exportar ambas funciones
