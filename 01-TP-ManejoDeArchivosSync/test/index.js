@@ -12,7 +12,7 @@ import { transformarStringEnArrayDeNumeros, transformarArrayDeNumerosAUnSoloStri
 // combino los cuatro arrays
 
 
-console.log('----INICIO----');
+console.log('----INICIO LECTURA----');
 
 const rutaSetA = './in/10NumerosOrdenadosEntre1y50(setA).in'
 const rutaSetB = './in/10NumerosOrdenadosEntre1y50(setB).in'
@@ -20,25 +20,54 @@ const rutaImpares = './in/imparesOrdenadosEntre1y999.in'
 const rutaPares = './in/paresOrdenadosEntre2y1000.in'
 
 //lectura del archivo //utf-8 es el formato de codificacion del archivo
-const setA = leerArchivoComoString(rutaSetA); 
-console.log('10NumerosOrdenadosEntre1y50(setA):', setA);
+console.log('\n[LECTURA]');
+const setATxt       = leerArchivoComoString(rutaSetA);
+const setBTxt       = leerArchivoComoString(rutaSetB);
+const imparesTxt    = leerArchivoComoString(rutaImpares);
+const paresTxt      = leerArchivoComoString(rutaPares);
 
-console.log('--------');
+console.log('---FIN LECTURA----');
 
-const setB = leerArchivoComoString(rutaSetB); 
-console.log('10NumerosOrdenadosEntre1y50(setB):', setB);
+//pruebo conversion de texto a array
+console.log('\n[PRUEBA] transformarStringEnArrayDeNumeros(imparesTxt)')
 
-console.log('--------');
+const setA    = transformarStringEnArrayDeNumeros(setATxt, ',')
+const setB    = transformarStringEnArrayDeNumeros(setBTxt, ',')
+const impares = transformarStringEnArrayDeNumeros(imparesTxt, ',')
+const pares   = transformarStringEnArrayDeNumeros(paresTxt, ',')
 
-const impares1y999 = leerArchivoComoString(rutaImpares); 
-console.log('imparesOrdenadosEntre1y999:', impares1y999);
+//falta output
+console.log('Resultado:', impares)
 
-console.log('--------');
+console.log('\n--------');
 
-const pares2y1000 = leerArchivoComoString(rutaPares); 
-console.log('paresOrdenadosEntre2y1000:', pares2y1000);
+//pruebo apareo
+console.log('\n[PRUEBA] combinarDosArrays(setA, setB)')
 
-console.log('---FIN-----');
+const apareoPrueba = combinarDosArrays(setA, setB)
+console.log('Resultado:', apareoPrueba)
 
-//la carpeta in tiene listas de numeros para generar las entradas
-//lee los archivos in y deben escupir lo que sale en out
+console.log('\n--------');
+
+//combinarNArrays con los 4
+console.log('\n[PRUEBA] combinarNArrays([A, B, impares, pares])');
+
+const apareoTodos = combinarNArrays([setA, setB, impares, pares]);
+console.log('Resultado:', apareoTodos);
+
+console.log('\n--------');
+
+//escribirTextoEnArchivo
+console.log('\n[PRUEBA] escribirTextoEnArchivo([A, B, impares, pares])');
+
+// 5) Escribir resultados en ./out (crear si no existe o sobrescribir si existe)
+const outApareoPrueba  = './out/resultado_apareoPrueba.in';
+const outApareoTodos = './out/combinado.out';
+
+escribirTextoEnArchivo(outApareoPrueba,  transformarArrayDeNumerosAUnSoloString(apareoPrueba, ','), true)
+escribirTextoEnArchivo(outApareoTodos, transformarArrayDeNumerosAUnSoloString(apareoTodos, ','), true)
+
+const outError = './out/no_crear_este_archivo.out';
+escribirTextoEnArchivo(outError,'esto no debería crearse', false)
+
+console.log('--- FIN PRUEBAS ---');

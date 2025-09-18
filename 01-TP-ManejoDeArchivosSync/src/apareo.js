@@ -45,7 +45,7 @@ export function combinarDosArrays(arrA, arrB) {
 /**
  * toma un array de muchos arrays de números ordenados y los combina en uno solo, aún ordenado
  * @param {number[][]} arrs el array de arrays de números que quiero combinar
- * @returns {nuber[]} el nuevo array de números ordenados
+ * @returns {number[]} el nuevo array de números ordenados
  */
 export function combinarNArrays(arrs) {
       if (arrs.length === 0) return [];
