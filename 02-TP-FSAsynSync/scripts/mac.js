@@ -1,4 +1,4 @@
-//modo asincornico
+//mac.js → modo asincrónico con callbacks
 import fs from 'fs'
 
 /**
@@ -11,10 +11,10 @@ import fs from 'fs'
     2) Muestre por consola el objeto info luego de leer el archivo.
     3) Guarde el objeto info en un archivo llamado info.txt
         dentro de la misma carpeta de package.json.
-    4) Incluiya el manejo de errores.
+    4) Incluya el manejo de errores.
  */
 const ruta = './package.json'
-
+const outFile = './info.txt'
 fs.readFile(ruta, 'utf-8', (err, data) => {
   if (err) {
     console.error('Error al leer archivo:', err)
@@ -34,5 +34,13 @@ fs.readFile(ruta, 'utf-8', (err, data) => {
     }
 
     console.log(info)
+
+    fs.writeFileSync(outFile, JSON.stringify(info, null, '\t'), "utf-8", (err) => {
+        if (err) {
+            console.error("Error al escribir archivo:", err);
+            return
+        }
+        console.log(`Archivo creado en: ${outFile}`);
+    })
   })
 })
