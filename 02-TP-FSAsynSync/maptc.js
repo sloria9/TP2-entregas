@@ -1,0 +1,1 @@
+//modo asincrónico con promises (sintaxis then catch).

@@ -1,0 +1,1 @@
+//modo sincrónico
