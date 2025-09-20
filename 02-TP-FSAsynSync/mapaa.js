@@ -1,1 +1,0 @@
-//modo asincrónico con promises (sintaxis async await).

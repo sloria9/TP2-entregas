@@ -4,13 +4,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "ms": "node ms.js",
-    "mac": "node mac.js",
-    "maptc": "node maptc.js",
-    "mapaa": "node mapaa.js"
-  },
+"scripts": {
+  "ms": "node scripts/ms.js",
+  "mac": "node scripts/mac.js",
+  "maptc": "node scripts/maptc.js",
+  "mapaa": "node scripts/mapaa.js"
+}
+,
   "keywords": [],
   "author": "",
   "license": "ISC"
