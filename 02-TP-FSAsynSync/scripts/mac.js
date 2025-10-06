@@ -13,6 +13,8 @@ import fs from 'fs'
         dentro de la misma carpeta de package.json.
     4) Incluya el manejo de errores.
  */
+
+//cuando la lectura del archivo finaliza, se dispara el callback
 const ruta = './package.json'
 const outFile = './info.txt'
 fs.readFile(ruta, 'utf-8', (err, data) => {
