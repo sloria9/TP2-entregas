@@ -1,4 +1,6 @@
 //modo asincrónico con promises (sintaxis async await).
+import fs from 'fs'
+
 /**
  * 1) Lea el archivo package.json y declare un objeto con el siguiente formato y datos:
     let info = {
@@ -11,3 +13,5 @@
         dentro de la misma carpeta de package.json.
     4) Incluiya el manejo de errores.
  */
+
+const ruta = './package.json'

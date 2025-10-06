@@ -15,11 +15,19 @@ import fs from 'fs'
  */
 
 const ruta = './package.json'
+const outFile = './info.txt'
 
-const dataString = fs.readFileSync(ruta, 'utf8');
+try {
+const dataString = fs.readFileSync(ruta, 'utf8')
 const dataObj = JSON.parse(dataString)
-const { size } = fs.statSync('./package.json');
+const { size } = fs.statSync('./package.json')
 
-let info = { dataString, dataObj, size };
+let info = { dataString, dataObj, size }
 
 console.log(info)
+
+ fs.writeFileSync(outFile, JSON.stringify(info, null, '\t'), "utf-8")
+
+} catch (err) {
+  console.error('Error:', err.message)
+}
