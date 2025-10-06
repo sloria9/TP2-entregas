@@ -1,5 +1,5 @@
 //modo asincrónico con promises (sintaxis async await).
-import fs from 'fs'
+import { readFile, writeFile, stat } from 'node:fs/promises';
 
 /**
  * 1) Lea el archivo package.json y declare un objeto con el siguiente formato y datos:
@@ -15,3 +15,23 @@ import fs from 'fs'
  */
 
 const ruta = './package.json'
+const outFile = './info.txt'
+
+async function ejecutar() {
+  try {
+    const contenidoStr = await readFile(ruta, 'utf8');
+    const contenidoObj = JSON.parse(contenidoStr);
+    const { size } = await stat(ruta);
+
+    const info = { contenidoStr, contenidoObj, size };
+    console.log(info);
+
+    const infoStr = JSON.stringify(info, null, '\t');
+    await writeFile(outFile, infoStr, 'utf8');
+
+  } catch (err) {
+    console.error('Error:', err.message);
+  }
+}
+
+ejecutar();

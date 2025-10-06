@@ -1,6 +1,6 @@
 {
-	"dataString": "{\n  \"type\": \"module\",\n  \"name\": \"02-tp-fsasynsync\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"index.js\",\n\"scripts\": {\n  \"ms\": \"node scripts/ms.js\",\n  \"mac\": \"node scripts/mac.js\",\n  \"maptc\": \"node scripts/maptc.js\",\n  \"mapaa\": \"node scripts/mapaa.js\"\n}\n,\n  \"keywords\": [],\n  \"author\": \"\",\n  \"license\": \"ISC\"\n}\n",
-	"dataObj": {
+	"contenidoStr": "{\n  \"type\": \"module\",\n  \"name\": \"02-tp-fsasynsync\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"index.js\",\n\"scripts\": {\n  \"ms\": \"node scripts/ms.js\",\n  \"mac\": \"node scripts/mac.js\",\n  \"maptc\": \"node scripts/maptc.js\",\n  \"mapaa\": \"node scripts/mapaa.js\"\n}\n,\n  \"keywords\": [],\n  \"author\": \"\",\n  \"license\": \"ISC\"\n}\n",
+	"contenidoObj": {
 		"type": "module",
 		"name": "02-tp-fsasynsync",
 		"version": "1.0.0",
