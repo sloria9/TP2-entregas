@@ -10,37 +10,36 @@ class ModelLibros{
             { id: '4', titulo: '1984', autor: 'George Orwell', anio: 1949 }
     }
 
-    obtenerLibros = (id) => {
-        if (id) {
-            return this.#libros.find(libro => libro.id === id);
-        }
-        return this.#libros;
-    };
+    obtenerLibros = async () => this.#libros
 
-    guardarLibro = (libro) => {
-        libro.id = String(parseInt(this.#libros[this.#libros.length - 1]?.id || 0) + 1);
-        this.#libros.push(libro);
-        return libro;
-    };
+    obtenerLibro = async id => {
+      const libro = this.#libros.find(l => l.id == id)
+      return libro || {}
+    }
 
-    actualizarLibro = (id, libroActualizado) => {
-        const index = this.#libros.findIndex(libro => libro.id === id);
-        if (index !== -1) {
-            const libroAnterior = this.#libros[index];
-            const libroNuevo = { ...libroAnterior, ...libroActualizado };
-            this.#libros[index] = libroNuevo;
-            return libroNuevo;
-        }
-        return null;
-    };
+    guardarLibro = async libro => {
+      libro.id = String(parseInt(this.#libros[this.#libros.length-1]?.id || 0) + 1)
+      this.#libros.push(libro)
+      return libro
+    }
 
-    borrarLibro = (id) => {
-        const index = this.#libros.findIndex(libro => libro.id === id);
-        if (index !== -1) {
-            const libroBorrado = this.#libros.splice(index, 1)[0];
-            return libroBorrado;
-        }
-        return null;
-    };
+
+    actualizarLibro = async (id, libro) => {
+    libro.id = id
+
+    const index = this.#libros.findIndex(l => l.id == id)
+    const libroAnt = this.#libros[index]
+    const libroActual = {...libroAnt, ...libro}
+
+    this.#libros.splice(index,1,libroActual)
+
+    return libroActual
+    }
+
+    borrarLibro = async id => {
+        const index = this.#libros.findIndex(libro => libro.id == id)
+        const libro = this.#libros.splice(index,1)[0]
+        return libro
+    }
 }
-export default new ModelLibros()
+export default ModelLibros
