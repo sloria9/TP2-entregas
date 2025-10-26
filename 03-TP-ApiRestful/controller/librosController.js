@@ -2,7 +2,7 @@ import service from '../service/librosService.js';
 
 const getAll = async (req, res, next) => {
     try {
-        res.json(await service.getAll()); // Ahora esta llamada es consistente
+        res.json(await service.getAll());
     } catch (e) {
         next(e);
     }
@@ -10,7 +10,7 @@ const getAll = async (req, res, next) => {
 
 const getById = async (req, res, next) => {
     try {
-        const libro = await service.getById(req.params.id); // Ahora esta llamada es consistente
+        const libro = await service.getById(req.params.id);
         if (!libro) return res.status(404).json({ error: 'libro no encontrado' });
         res.json(libro);
     } catch (e) {
@@ -21,7 +21,7 @@ const getById = async (req, res, next) => {
 
 const create = async (req, res, next) => { try {
 
-  const nuevo = await service.crear(req.body);
+  const nuevo = await service.create(req.body);
 
   res.status(201).json(nuevo);
 
@@ -31,7 +31,7 @@ const create = async (req, res, next) => { try {
 
 const update = async (req, res, next) => { try {
 
-  const act = await service.actualizar(req.params.id, req.body);
+  const act = await service.update(req.params.id, req.body);
 
   if (!act) return res.status(404).json({ error: 'libro no encontrado' });
 
@@ -43,7 +43,7 @@ const update = async (req, res, next) => { try {
 
 const remove = async (req, res, next) => { try {
 
-  const del = await service.borrar(req.params.id);
+  const del = await service.remove(req.params.id);
 
   if (!del) return res.status(404).json({ error: 'libro no encontrado' });
 

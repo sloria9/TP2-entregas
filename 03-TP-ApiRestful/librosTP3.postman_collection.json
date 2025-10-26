@@ -1,0 +1,475 @@
+{
+	"info": {
+		"_postman_id": "f97d6b0f-df9c-4d88-82e5-c8672c9d93b1",
+		"name": "librosTP3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7969977"
+	},
+	"item": [
+		{
+			"name": "getAll()",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/libros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"libros"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/libros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"libros"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "331"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14b-8JScSbS4vuWgK5OgjWgzAEh9Mgg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Oct 2025 22:58:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"1\",\n        \"titulo\": \"Los 7 maridos de Evelyn Hugo\",\n        \"autor\": \"Taylor Jenkins Reid\",\n        \"anio\": 2017\n    },\n    {\n        \"id\": \"2\",\n        \"titulo\": \"I`m glad my mom died\",\n        \"autor\": \"Jennette McCurdy\",\n        \"anio\": 2022\n    },\n    {\n        \"id\": \"3\",\n        \"titulo\": \"Outliers: The Story of Success\",\n        \"autor\": \"Malcolm Gladwell\",\n        \"anio\": 2008\n    },\n    {\n        \"id\": \"4\",\n        \"titulo\": \"1984\",\n        \"autor\": \"George Orwell\",\n        \"anio\": 1949\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getById()",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/libros/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"libros",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/libros/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"libros",
+								"6"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-DFmY4dWU6uGDT14ZYM65Rbj/ceQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Oct 2025 23:00:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"libro no encontrado\"\n}"
+				},
+				{
+					"name": "getById()",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/libros/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"libros",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "62"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3e-df6e425lEwJ3cRg05MRtO0QItLg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Oct 2025 23:44:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"4\",\n    \"titulo\": \"1984\",\n    \"autor\": \"George Orwell\",\n    \"anio\": 1949\n}"
+				}
+			]
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"2\",\n    \"titulo\": \"I`m glad my mom died\",\n    \"autor\": \"Jennette McCurdy\",\n    \"anio\": 2022\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/libros/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"libros",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/libros/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"libros",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "81"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"51-mbESdEGC0LWtVLiJLbqVmrdWgf4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Oct 2025 22:59:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"2\",\n    \"titulo\": \"I`m glad my mom died\",\n    \"autor\": \"Jennette McCurdy\",\n    \"anio\": 2022\n}"
+				}
+			]
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/libros/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"libros",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "removed",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/libros/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"libros",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "81"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"51-mbESdEGC0LWtVLiJLbqVmrdWgf4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Oct 2025 23:36:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"2\",\n    \"titulo\": \"I`m glad my mom died\",\n    \"autor\": \"Jennette McCurdy\",\n    \"anio\": 2022\n}"
+				}
+			]
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"id\": \"1\",\n        \"titulo\": \"Los siete maridos de Evelyn Hugo\",\n        \"autor\": \"Taylor Jenkins Reid\",\n        \"anio\": 2017\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/libros/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"libros",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"id\": \"1\",\n        \"titulo\": \"Los siete maridos de Evelyn Hugo\",\n        \"autor\": \"Taylor Jenkins Reid\",\n        \"anio\": 2017\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/libros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"libros",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "96"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"60-Tl6NXL8uMZjsdeSgP6YnEu4OVz8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Oct 2025 23:43:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"1\",\n    \"titulo\": \"Los siete maridos de Evelyn Hugo\",\n    \"autor\": \"Taylor Jenkins Reid\",\n    \"anio\": 2017\n}"
+				}
+			]
+		}
+	]
+}

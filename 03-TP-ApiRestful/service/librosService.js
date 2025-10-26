@@ -26,7 +26,7 @@ const update = async (id, cambios) => {
         cambios.anio = Number(cambios.anio);
     }
     return repo.update(id, cambios);
-};
+}
 
 const remove = async (id) => {
     return repo.remove(id);
