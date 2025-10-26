@@ -4,17 +4,12 @@ class ModelLibros{
 
     constructor(){
         this.#libros =
-    { id: '1', titulo: 'Los 7 maridos de Evelyn Hugo', autor: 'Taylor Jenkins Reid', anio: 2017 },
-    { id: '2', titulo: 'I`m glad my mom died', autor: 'Jennette McCurdy', anio: 2022 },
-    { id: '3', titulo: 'Outliers: The Story of Success', autor: 'Malcolm Gladwell', anio: 2008 },
-    { id: '4', titulo: '1984', autor: 'George Orwell', anio: 1949 }
+            { id: '1', titulo: 'Los 7 maridos de Evelyn Hugo', autor: 'Taylor Jenkins Reid', anio: 2017 },
+            { id: '2', titulo: 'I`m glad my mom died', autor: 'Jennette McCurdy', anio: 2022 },
+            { id: '3', titulo: 'Outliers: The Story of Success', autor: 'Malcolm Gladwell', anio: 2008 },
+            { id: '4', titulo: '1984', autor: 'George Orwell', anio: 1949 }
     }
 
-    getAll = async () => this.#libros;
-
-    getById = async (id) => this.#libros.find(l => l.id === id) || null;
-
-    
     obtenerLibros = (id) => {
         if (id) {
             return this.#libros.find(libro => libro.id === id);
