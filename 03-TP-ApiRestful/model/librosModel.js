@@ -43,4 +43,4 @@ class ModelLibros{
         return null;
     };
 }
-export default ModelLibros()
+export default new ModelLibros()

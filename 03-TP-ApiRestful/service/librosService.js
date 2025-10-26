@@ -1,4 +1,4 @@
-import repo from '../model/libroModel.js';
+import repo from '../model/librosModel.js';
 
 const validar = (data) => {
   if (!data.titulo || !data.autor || typeof data.anio !== 'number') {
@@ -8,9 +8,9 @@ const validar = (data) => {
   }
 };
 
-const listar = () => repo.getAll();
+const listar = () => repo.obtenerLibros();
 
-const buscarPorId = (id) => repo.getById(id);
+const buscarPorId = (id) => repo.obtenerLibros(id);
 
 const crear = (data) => {
   validar(data);
