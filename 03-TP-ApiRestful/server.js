@@ -3,6 +3,10 @@ import router from './router/libros.js';
 
 const app = express()
 app.use(express.json())
+app.use(express.urlencoded({extends: true}))
+
+//servicio de recursos estaticos
+app.use(express.static('public'))
 
 
 /* ----------------------------------- */
