@@ -1,5 +1,4 @@
 import express from 'express'
-
 import Controller from '../controller/numeroController.js'
 
 class Router {
@@ -11,11 +10,11 @@ class Router {
     config() {
         const router = express.Router()
 
-        router.post('/entrada', ctrl.postEntrada);
-        router.get('/entrada', ctrl.getEntrada);
-        router.get('/promedio', ctrl.getPromedio);
-        router.get('/minmax', ctrl.getMinMax);
-        router.get('/cantidad', ctrl.getCantidad);
+        router.post('/entrada', this.controlador.postEntrada);
+        router.get('/entrada', this.controlador.getEntrada);
+        router.get('/promedio', this.controlador.getPromedio);
+        router.get('/minmax', this.controlador.getMinMax);
+        router.get('/cantidad', this.controlador.getCantidad);
 
         return router
     }

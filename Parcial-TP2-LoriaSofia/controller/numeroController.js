@@ -52,3 +52,5 @@ class NumeroController {
     }
   };
 }
+
+export default NumeroController
