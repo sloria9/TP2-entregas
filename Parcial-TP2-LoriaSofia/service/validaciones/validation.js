@@ -1,7 +1,13 @@
-export function validarNumero(obj) {
-  const n = Number(obj.numero ?? obj)
-  if (!Number.isFinite(n)) {
-    return { result: false, error: { details: [{ message: 'El campo "numero" debe ser numérico' }] } }
-  }
-  return { result: true }
+import Joi from "joi"
+
+export const validar = numero => {
+    const numeroSchema = Joi.object({
+        numero: Joi.number().min(0).max(1000000).required()
+    })
+
+    const { error } = numeroSchema.validate(numero)
+    if(error) {
+        return { result: false, error }
+    }
+    return { result: true }
 }

@@ -7,33 +7,35 @@ class NumerosFileDAO {
     this.#ruta = './data/numeros.json'
   }
 
-  async #leer() {
+  async #leerArchivo() {
+    let numeros = []
     try {
-      const data = await fs.readFile(this.#ruta, 'utf-8')
-      return JSON.parse(data)
-    } catch {
-      return []
+      numeros = JSON.parse(await fs.promises.readFile(ruta, 'utf-8'))
+      return numeros
     }
+    catch {}
+
+    return numeros
   }
 
-  async #escribir(datos) {
-    await fs.writeFile(this.#ruta, JSON.stringify(datos, null, 2))
+  async #escribirArchivo(ruta, numeros) {
+    await fs.writeFile(ruta, JSON.stringify(numeros, null, '\t'))
   }
 
   obtenerNumeros = async () => {
-    return await this.#leer()
+    return await this.#leerArchivo()
   }
 
   guardarNumero = async (data) => {
     const n = Number(data.numero ?? data)
-    const numeros = await this.#leer()
+    const numeros = await this.#leerArchivo()
     numeros.push(n)
-    await this.#escribir(numeros)
+    await this.#escribirArchivo(numeros)
     return n
   }
 
   borrarNumeros = async () => {
-    await this.#escribir([])
+    await this.#escribirArchivo([])
     return { msg: 'Archivo reseteado' }
   }
 }

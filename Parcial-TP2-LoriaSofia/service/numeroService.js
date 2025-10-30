@@ -1,6 +1,6 @@
 import config from '../config.js'
-import NumerosFactory from '../modelo/DAOs/numerosFactory.js'
-import { validarNumero } from './validaciones/numero.js'
+import NumerosFactory from '../model/DAO/numeroFactory.js'
+import { validar } from './validaciones/validation.js'
 
 class NumerosService {
   #modelo = null
@@ -16,8 +16,7 @@ class NumerosService {
   }
 
   guardarNumero = async (numero) => {
-    // validación con Joi o lógica propia
-    const res = validarNumero(numero)
+    const res = validar(numero)
     if (res.result) {
       const numeroGuardado = await this.#modelo.guardarNumero(numero)
       return numeroGuardado
@@ -26,19 +25,14 @@ class NumerosService {
     }
   }
 
-  borrarNumeros = async () => {
-    const res = await this.#modelo.borrarNumeros()
-    return res
-  }
-
-  obtenerPromedio = async () => {
+  getPromedio = async () => {
     const numeros = await this.#modelo.obtenerNumeros()
     if (numeros.length === 0) return 0
     const sum = numeros.reduce((a, b) => a + b, 0)
     return sum / numeros.length
   }
 
-  obtenerMinMax = async () => {
+  getMinMax = async () => {
     const numeros = await this.#modelo.obtenerNumeros()
     if (numeros.length === 0) return { min: null, max: null }
 
@@ -47,7 +41,7 @@ class NumerosService {
     return { min, max }
   }
 
-  obtenerCantidad = async () => {
+  getCantidad = async () => {
     const numeros = await this.#modelo.obtenerNumeros()
     return numeros.length
   }

@@ -1,14 +1,15 @@
+import Service from '../service/numeroService.js'
+
 class NumeroController {
   
-  
   constructor(service) {
-    this.service = service;
+    this.service = new Service();
   }
 
   postEntrada = async (req, res) => {
     try {
       const { numero } = req.body ?? {};
-      const n = await this.service.add(numero);
+      const n = await this.service.guardarNumero(numero);
       return res.status(201).json({ ok: true, numero: n });
     } catch(error) {
       res.status(500).json({url: req.url, method: req.method, error: error.message})
@@ -17,7 +18,7 @@ class NumeroController {
 
   getEntrada = async (req, res) => {
     try {
-      const numeros = await this.service.getAll();
+      const numeros = await this.service.obtenerNumeros();
       return res.json({ numeros });
     } catch(error) {
       res.status(500).json({url: req.url, method: req.method, error: error.message})
