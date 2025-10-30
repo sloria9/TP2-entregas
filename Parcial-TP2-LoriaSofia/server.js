@@ -15,7 +15,7 @@ class Server {
         app.use(express.json())
         app.use(express.urlencoded({extends: true}))
 
-        // Servicio de recursos estáticos (recursos del frontend)
+        // Servicio de recursos estáticos
         app.use(express.static('public'))
 
         /* ----------------------------------- */
