@@ -12,7 +12,13 @@ class NumerosService {
 
   obtenerNumeros = async () => {
     const numeros = await this.#modelo.obtenerNumeros()
-    return numeros
+    return numeros.reduce((valores, item) => {
+      const valor = Number(item?.numero ?? item)
+      if (!Number.isNaN(valor)) {
+        valores.push(valor)
+      }
+      return valores
+    }, [])
   }
 
   guardarNumero = async (numero) => {
@@ -26,14 +32,14 @@ class NumerosService {
   }
 
   getPromedio = async () => {
-    const numeros = await this.#modelo.obtenerNumeros()
+    const numeros = await this.obtenerNumeros()
     if (numeros.length === 0) return 0
     const sum = numeros.reduce((a, b) => a + b, 0)
     return sum / numeros.length
   }
 
   getMinMax = async () => {
-    const numeros = await this.#modelo.obtenerNumeros()
+    const numeros = await this.obtenerNumeros()
     if (numeros.length === 0) return { min: null, max: null }
 
     const min = Math.min(...numeros)
@@ -42,7 +48,7 @@ class NumerosService {
   }
 
   getCantidad = async () => {
-    const numeros = await this.#modelo.obtenerNumeros()
+    const numeros = await this.obtenerNumeros()
     return numeros.length
   }
 }

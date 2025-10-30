@@ -8,9 +8,9 @@ class NumeroController {
 
   postEntrada = async (req, res) => {
     try {
-      const { numero } = req.body ?? {};
-      const n = await this.service.guardarNumero(numero);
-      return res.status(201).json({ ok: true, numero: n });
+      const numero = req.body
+      const numeroSaved = await this.service.guardarNumero(numero);
+      return res.status(201).json({ ok: true, numero: numeroSaved });
     } catch(error) {
       res.status(500).json({url: req.url, method: req.method, error: error.message})
     }

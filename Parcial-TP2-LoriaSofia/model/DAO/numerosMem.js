@@ -2,7 +2,7 @@ class NumerosMemDAO {
   #numeros = []
 
   constructor() {
-    this.#numeros = []
+    this.#numeros = [2, 23, 64]
   }
 
   obtenerNumeros = async () => {
