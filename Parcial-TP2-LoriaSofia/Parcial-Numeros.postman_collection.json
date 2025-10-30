@@ -334,6 +334,92 @@
 					"body": "{\n    \"cantidad\": 3\n}"
 				}
 			]
+		},
+		{
+			"name": "minmax",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"numero\": 123\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/numeros/minmax",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"numeros",
+						"minmax"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "minmax",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"numero\": 123\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/numeros/minmax",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"numeros",
+								"minmax"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12-kwmGbc/z1UUoOk5ZiFyMaasu0WQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Oct 2025 00:44:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"min\": 2,\n    \"max\": 64\n}"
+				}
+			]
 		}
 	]
 }
