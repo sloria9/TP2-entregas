@@ -1,16 +1,42 @@
 import express from 'express';
 import router from './router/routerSensor.js';
 
-const app = express();
+class Server {
+    constructor(port = 8080) {
+        this.port = port;
+        this.app = express();
+        this.server = null;
+        this.configure();
+    }
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+    configure() {
+        this.app.use(express.json());
+        this.app.use(express.urlencoded({ extended: true }));
+        this.app.use('/', router);
+    }
 
-app.use('/', router);
+    start() {
+        if (this.server) {
+            return this.server;
+        }
 
-const PORT = 8080;
-const server = app.listen(PORT, () => {
-    console.log(`Servidor escuchando en puerto ${PORT}`);
-});
+        this.server = this.app.listen(this.port, () => {
+            console.log(`Servidor escuchando en puerto ${this.port}`);
+        });
 
-server.on('error', error => console.log(`Error en servidor: ${error.message}`));
+        this.server.on('error', error => {
+            console.log(`Error en servidor: ${error.message}`);
+        });
+
+        return this.server;
+    }
+
+    stop() {
+        if (this.server) {
+            this.server.close();
+            this.server = null;
+        }
+    }
+}
+
+export default Server;

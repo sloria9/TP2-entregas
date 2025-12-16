@@ -1,6 +1,6 @@
-import sensoresMem from '../model/DAO/sensorMem.js';
-import alertasMem from '../model/DAO/alertaMem.js';
-import { validarLectura } from './validaciones/validations.js';
+import sensoresMem from '../dao/persistencia/sensorMem.js';
+import alertasMem from '../dao/persistencia/alertaMem.js';
+import { validarLectura } from './validation/validations.js';
 
 const verificarAlertas = (lectura) => {
     let mensajeAlerta = null;
