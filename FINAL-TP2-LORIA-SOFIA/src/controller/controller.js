@@ -10,3 +10,21 @@ export const recibirLectura = async (req, res) => {
         res.status(400).json({ errorMsg: error.message });
     }
 };
+
+export const listarSensores = (_req, res) => {
+    try {
+        const sensores = service.obtenerSensores();
+        res.status(200).json(sensores);
+    } catch (error) {
+        res.status(500).json({ errorMsg: error.message });
+    }
+};
+
+export const listarAlertas = (_req, res) => {
+    try {
+        const alertas = service.obtenerAlertas();
+        res.status(200).json(alertas);
+    } catch (error) {
+        res.status(500).json({ errorMsg: error.message });
+    }
+};

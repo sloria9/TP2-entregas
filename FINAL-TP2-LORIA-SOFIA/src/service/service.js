@@ -6,36 +6,45 @@ const verificarAlertas = (lectura) => {
     let mensajeAlerta = null;
 
     if (lectura.tipo === 'TEMPERATURA' && lectura.valor > 35) {
-        mensajeAlerta = "Temperatura excede 35 grados";
+        mensajeAlerta = "TEMPERATURA alta";
     } else if (lectura.tipo === 'HUMEDAD' && lectura.valor < 20) {
-        mensajeAlerta = "Humedad por debajo de 20%";
+        mensajeAlerta = "HUMEDAD baja";
     } else if (lectura.tipo === 'CO2' && lectura.valor > 1000) {
-        mensajeAlerta = "Nivel de CO2 peligroso";
+        mensajeAlerta = "CO2 peligroso";
     }
 
     if (mensajeAlerta) {
         const nuevaAlerta = {
-            sensorId: lectura.id,
+            id: lectura.id,
             tipo: lectura.tipo,
             valor: lectura.valor,
-            mensaje: mensajeAlerta,
-            fecha: new Date().toISOString()
+            timestamp: lectura.timestamp,
+            alerta: mensajeAlerta,
         };
         alertasMem.saveAlerta(nuevaAlerta);
         console.log("ALERTA GENERADA:", nuevaAlerta);
     }
+
+    return mensajeAlerta;
 };
 
 export const procesarLectura = async (lectura) => {
     validarLectura(lectura);
 
-    const accion = sensoresMem.saveSensor(lectura);
+    sensoresMem.saveSensor(lectura);
 
-    verificarAlertas(lectura);
+    const alerta = verificarAlertas(lectura);
 
-    return { 
-        status: "ok", 
-        accion: accion, 
-        sensor: lectura 
+    return {
+        ...lectura,
+        alerta: alerta ?? null,
     };
+};
+
+export const obtenerSensores = () => {
+    return sensoresMem.getAll();
+};
+
+export const obtenerAlertas = () => {
+    return alertasMem.getAll();
 };

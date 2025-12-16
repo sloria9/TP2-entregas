@@ -6,6 +6,10 @@ class AlertasMem {
     saveAlerta(alerta) {
         this.alertas.push(alerta);
     }
+
+    getAll() {
+        return this.alertas;
+    }
 }
 
 export default new AlertasMem();
