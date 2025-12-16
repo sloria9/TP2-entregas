@@ -1,6 +1,9 @@
-import sensoresMem from '../dao/persistencia/sensorMem.js';
 import alertasMem from '../dao/persistencia/alertaMem.js';
+import SensorFactory from '../dao/persistencia/sensorFactory.js';
+import config from '../config.js';
 import { validarLectura } from './validation/validations.js';
+
+const sensoresDAO = SensorFactory.get(config.MODO_PERSISTENCIA);
 
 const verificarAlertas = (lectura) => {
     let mensajeAlerta = null;
@@ -31,7 +34,7 @@ const verificarAlertas = (lectura) => {
 export const procesarLectura = async (lectura) => {
     validarLectura(lectura);
 
-    sensoresMem.saveSensor(lectura);
+    sensoresDAO.saveSensor(lectura);
 
     const alerta = verificarAlertas(lectura);
 
@@ -42,7 +45,7 @@ export const procesarLectura = async (lectura) => {
 };
 
 export const obtenerSensores = () => {
-    return sensoresMem.getAll();
+    return sensoresDAO.getAll();
 };
 
 export const obtenerAlertas = () => {
