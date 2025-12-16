@@ -11,7 +11,7 @@ export const recibirLectura = async (req, res) => {
     }
 };
 
-export const listarSensores = (_req, res) => {
+export const listarSensores = (req, res) => {
     try {
         const sensores = service.obtenerSensores();
         res.status(200).json(sensores);
@@ -20,7 +20,7 @@ export const listarSensores = (_req, res) => {
     }
 };
 
-export const listarAlertas = (_req, res) => {
+export const listarAlertas = (req, res) => {
     try {
         const alertas = service.obtenerAlertas();
         res.status(200).json(alertas);

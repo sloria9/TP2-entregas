@@ -1,0 +1,548 @@
+{
+	"info": {
+		"_postman_id": "0d07e426-4b14-4115-85e4-e762b83fbded",
+		"name": "FINAL-LORIA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7969977"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/lecturas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"SEN4A9X3\",\n    \"tipo\": \"HUMEDAD\",\n    \"valor\": 19,\n    \"timestamp\": \"2025-12-16T10:00:00Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/lecturas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lecturas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8080/lecturas",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"SEN4A9X1\",\n    \"tipo\": \"TEMPERATURA\",\n    \"valor\": 35.5,\n    \"timestamp\": \"2025-12-16T10:00:00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/lecturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lecturas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "114"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"72-4DfXOmlj8mpCDvyNJZdxEJgFRVs\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Dec 2025 23:21:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"SEN4A9X1\",\n    \"tipo\": \"TEMPERATURA\",\n    \"valor\": 35.5,\n    \"timestamp\": \"2025-12-16T10:00:00Z\",\n    \"alerta\": \"TEMPERATURA alta\"\n}"
+				},
+				{
+					"name": "alerta null",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"SEN4A9X1\",\n    \"tipo\": \"TEMPERATURA\",\n    \"valor\": 32.5,\n    \"timestamp\": \"2025-12-16T10:00:00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/lecturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lecturas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "100"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"64-YNXMNBo5XQRSLSUYSUKuswQsdUc\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Dec 2025 23:22:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"SEN4A9X1\",\n    \"tipo\": \"TEMPERATURA\",\n    \"valor\": 32.5,\n    \"timestamp\": \"2025-12-16T10:00:00Z\",\n    \"alerta\": null\n}"
+				},
+				{
+					"name": "http://localhost:8080/lecturas",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"SEN4A9X2\",\n    \"tipo\": \"HUMEDAD\",\n    \"valor\": 19,\n    \"timestamp\": \"2025-12-16T10:00:00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/lecturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lecturas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"68-q56eMi63LpZiqu+UCKH6VYLU2xA\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Dec 2025 23:23:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"SEN4A9X2\",\n    \"tipo\": \"HUMEDAD\",\n    \"valor\": 19,\n    \"timestamp\": \"2025-12-16T10:00:00Z\",\n    \"alerta\": \"HUMEDAD baja\"\n}"
+				},
+				{
+					"name": "http://localhost:8080/lecturas",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"SEN4A9X2\",\n    \"tipo\": \"HUMEDAD\",\n    \"valor\": 21,\n    \"timestamp\": \"2025-12-16T10:00:00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/lecturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lecturas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "94"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5e-yBFMVDFTn3yGYhoElbgtbdIB4eo\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Dec 2025 23:24:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"SEN4A9X2\",\n    \"tipo\": \"HUMEDAD\",\n    \"valor\": 21,\n    \"timestamp\": \"2025-12-16T10:00:00Z\",\n    \"alerta\": null\n}"
+				},
+				{
+					"name": "http://localhost:8080/lecturas",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"SEN4A9X2\",\n    \"tipo\": \"CO2\",\n    \"valor\": 1005,\n    \"timestamp\": \"2025-12-16T10:00:00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/lecturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lecturas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "103"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"67-L8CM4wRguZ3JdakleY9MV+So0FY\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Dec 2025 23:25:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"SEN4A9X2\",\n    \"tipo\": \"CO2\",\n    \"valor\": 1005,\n    \"timestamp\": \"2025-12-16T10:00:00Z\",\n    \"alerta\": \"CO2 peligroso\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getSensores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sensores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sensores"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getSensores",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sensores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sensores"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "167"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a7-zGnNcZZLMhD4VnlW6NL/PRJGILg\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Dec 2025 23:25:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"SEN4A9X1\",\n        \"tipo\": \"TEMPERATURA\",\n        \"valor\": 32.5,\n        \"timestamp\": \"2025-12-16T10:00:00Z\"\n    },\n    {\n        \"id\": \"SEN4A9X2\",\n        \"tipo\": \"CO2\",\n        \"valor\": 1005,\n        \"timestamp\": \"2025-12-16T10:00:00Z\"\n    }\n]"
+				},
+				{
+					"name": "getSensores2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sensores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sensores"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "248"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f8-+rZs9eRdL/Bnp4ot3tD+HdtsH4o\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Dec 2025 23:25:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"SEN4A9X1\",\n        \"tipo\": \"TEMPERATURA\",\n        \"valor\": 32.5,\n        \"timestamp\": \"2025-12-16T10:00:00Z\"\n    },\n    {\n        \"id\": \"SEN4A9X2\",\n        \"tipo\": \"CO2\",\n        \"valor\": 1005,\n        \"timestamp\": \"2025-12-16T10:00:00Z\"\n    },\n    {\n        \"id\": \"SEN4A9X3\",\n        \"tipo\": \"HUMEDAD\",\n        \"valor\": 19,\n        \"timestamp\": \"2025-12-16T10:00:00Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getAlertas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/alertas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alertas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "alertas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/alertas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alertas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "314"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13a-Jfg1IosgkGdJ5z03X1Ii02RIlXU\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Dec 2025 23:31:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"SEN4A9X3\",\n        \"tipo\": \"HUMEDAD\",\n        \"valor\": 19,\n        \"timestamp\": \"2025-12-16T10:00:00Z\",\n        \"alerta\": \"HUMEDAD baja\"\n    },\n    {\n        \"id\": \"SEN4A9X2\",\n        \"tipo\": \"CO2\",\n        \"valor\": 1005,\n        \"timestamp\": \"2025-12-16T10:00:00Z\",\n        \"alerta\": \"CO2 peligroso\"\n    },\n    {\n        \"id\": \"SEN4A9X2\",\n        \"tipo\": \"CO2\",\n        \"valor\": 1005,\n        \"timestamp\": \"2025-12-16T10:00:00Z\",\n        \"alerta\": \"CO2 peligroso\"\n    }\n]"
+				}
+			]
+		}
+	]
+}
